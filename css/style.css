@@ -1,0 +1,38 @@
+.red {
+    background: red;
+    color: #fff;
+    padding: 15px;
+}
+
+.green {
+    background: green;
+    color: #fff;
+    padding: 15px;
+}
+
+.blue {
+    background: blue;
+    color: #fff;
+    padding: 15px;
+}
+
+.card img {
+    height: 200px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.card__body {
+    height: 150px;
+    overflow: hidden;
+}
+
+.more__btn {
+    background: green;
+    border-color: green;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}

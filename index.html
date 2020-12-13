@@ -15,46 +15,10 @@
         integrity="sha512-i0tPmtwhNYyKmqYiccSN9qsEX25FsNNkeWqIbjYyk7QoVkPLfyl7QsABy3oIQx5ofROjV6KLJTzV+asMrT25UA=="
         crossorigin="anonymous" />
 
-    <style>
-        .red {
-            background: red;
-            color: #fff;
-            padding: 15px;
-        }
 
-        .green {
-            background: green;
-            color: #fff;
-            padding: 15px;
-        }
+    <link rel="stylesheet" href="css/style.css" />
 
-        .blue {
-            background: blue;
-            color: #fff;
-            padding: 15px;
-        }
 
-        .card img {
-            height: 200px;
-            overflow: hidden;
-            object-fit: cover;
-        }
-
-        .card__body {
-            height: 150px;
-            overflow: hidden;
-        }
-
-        .more__btn {
-            background: green;
-            border-color: green;
-        }
-
-        body {
-            width: 100%;
-            overflow-x: hidden;
-        }
-    </style>
 </head>
 
 <body>
@@ -62,7 +26,7 @@
 
 
 
-    <div id="omar">
+    <div id="app">
 
         <b-row class="p-3">
             <b-col v-for="item in list" md="4" cols="12">
@@ -116,7 +80,7 @@
     <script>
         var vm = new Vue({
 
-            el: '#omar',
+            el: '#app',
             data: {
 
                 list: [{
