@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.18.1/bootstrap-vue.min.css"
+        integrity="sha512-oqSSCKWeQcVs+9Hek1tZlj8hMlLhDNI+NUmm56nBCsO4OLE8dyDpaUA/b2zGi+M9SML0xwGtk22ozH2qyqKipg=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.18.1/bootstrap-vue-icons.min.css"
+        integrity="sha512-i0tPmtwhNYyKmqYiccSN9qsEX25FsNNkeWqIbjYyk7QoVkPLfyl7QsABy3oIQx5ofROjV6KLJTzV+asMrT25UA=="
+        crossorigin="anonymous" />
+
+    <style>
+        .red {
+            background: red;
+            color: #fff;
+            padding: 15px;
+        }
+
+        .green {
+            background: green;
+            color: #fff;
+            padding: 15px;
+        }
+
+        .blue {
+            background: blue;
+            color: #fff;
+            padding: 15px;
+        }
+
+        .card img {
+            height: 200px;
+            overflow: hidden;
+            object-fit: cover;
+        }
+
+        .card__body {
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .more__btn {
+            background: green;
+            border-color: green;
+        }
+
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div id="omar">
+
+        <b-row class="p-3">
+            <b-col v-for="item in list" md="4" cols="12">
+                <b-card :title="item.name" :img-src="item.image" img-alt="Image" img-top tag="article"
+                    class="mb-2 card">
+                    <b-card-text class="card__body">
+                        {{ item.description }}
+                    </b-card-text>
+                    <b-button :href="lionInfo()" variant="primary" class="more__btn">More info </b-button>
+                </b-card>
+            </b-col>
+
+            <b-col v-for="item in list" md="4" cols="12">
+                <b-card :title="item.name" :img-src="item.image" img-alt="Image" img-top tag="article"
+                    class="mb-2 card">
+                    <b-card-text class="card__body">
+                        {{ item.description }}
+                    </b-card-text>
+                    <b-button variant="primary" class="more__btn" v-b-modal.modal-1>Test Modal
+                    </b-button>
+                </b-card>
+            </b-col>
+
+            <b-modal id="modal-1" title="Test Modal">
+                <p class="my-4">Test Modal!</p>
+            </b-modal>
+
+
+
+
+    </div>
+
+
+
+
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.18.1/bootstrap-vue.min.js"
+        integrity="sha512-EjDLjOtxOuNZDwpjHHPa4VAIomVXXv9gIGVuO/+smw04V8oIqhbuC/K1WTnr9k2YB30eltq2tiV3smzH1x9vuA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.18.1/bootstrap-vue-icons.min.js"
+        integrity="sha512-sc98ORSeUImZ1x0Vxz6E4Re65YBgXZdaadZIwaeadlzWFgLxwLCQwGVNw0WQYH12ALSHxSiAZhfLB6SRRsq3Pw=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var vm = new Vue({
+
+            el: '#omar',
+            data: {
+
+                list: [{
+                    name: "lion",
+                    image: "./image/lion.jpg",
+                    description: "The lion (Panthera leo) is a species in the family Felidae and a member of the genus Panthera. It has a muscular, deep-chested body, short, rounded head, round ears, and a hairy tuft at the end of its tail. It is sexually dimorphic; adult male lions have a prominent mane. With a typical head-to-body length of 184–208 cm (72–82 in) they are larger than females at 160–184 cm (63–72 in). It is a social species, forming groups called prides. A lion pride consists of a few adult males, related females and cubs. Groups of female lions usually hunt together, preying mostly on large ungulates. The lion is an apex and keystone predator; although some lions scavenge when opportunities occur and have been known to hunt humans, the species typically does not.",
+                    link: "https://en.wikipedia.org/wiki/Lion"
+                }, {
+
+                    name: "Zebra",
+                    image: "./image/220px-Plains_Zebra_Equus_quagga.jpg",
+                    description: "Zebras[a] (subgenus Hippotigris) are African equines with distinctive black-and-white striped coats. There are three extant species: the Grévy's zebra (Equus grevyi), plains zebra (E. quagga) and the mountain zebra (E. zebra). Zebras share the genus Equus with horses and asses, the three groups being the only living members of the family Equidae. Zebra stripes come in different patterns, unique to each individual. Several theories have been proposed for the function of these stripes, with most evidence supporting them as a form of protection from biting flies. Zebras inhabit eastern and southern Africa and can be found in a variety of habitats such as savannahs, grasslands, woodlands, shrublands and mountainous areas.",
+                    link: "https://en.wikipedia.org/wiki/Zebra",
+                }, {
+                    name: "Cat",
+                    image: "./image/An_up-close_picture_of_a_curious_male_domestic_shorthair_tabby_cat.jpg",
+                    description: "The cat (Felis catus) is a domestic species of small carnivorous mammal.[1][2] It is the only domesticated species in the family Felidae and is often referred to as the domestic cat to distinguish it from the wild members of the family.[4] A cat can either be a house cat, a farm cat or a feral cat; the latter ranges freely and avoids human contact.[5] Domestic cats are valued by humans for companionship and their ability to hunt rodents. About 60 cat breeds are recognized by various cat registries.[6]",
+                    link: "https://en.wikipedia.org/wiki/Cat",
+                }]
+
+            },
+            methods: {
+                lionInfo: function () {
+                    return "https://quran.com/"
+                }
+            }
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
