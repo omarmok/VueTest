@@ -32,7 +32,8 @@
     border-color: green;
 }
 
-body {
-    width: 100%;
-    overflow-x: hidden;
+.disabeld {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
