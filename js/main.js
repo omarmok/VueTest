@@ -20,7 +20,7 @@ var vm = new Vue({
             description: "The cat (Felis catus) is a domestic species of small carnivorous mammal.[1][2] It is the only domesticated species in the family Felidae and is often referred to as the domestic cat to distinguish it from the wild members of the family.[4] A cat can either be a house cat, a farm cat or a feral cat; the latter ranges freely and avoids human contact.[5] Domestic cats are valued by humans for companionship and their ability to hunt rodents. About 60 cat breeds are recognized by various cat registries.[6]",
             url: "https://en.wikipedia.org/wiki/Cat",
         }],
-        counter: 0,
+        total: 0,
         items: [
             { category: 0 }
 
@@ -39,8 +39,7 @@ var vm = new Vue({
         addcategory() {
             this.items.push({
                 category: this.category++,
-                counter: this.counter++,
-
+                total: this.total++,
             })
 
         },
