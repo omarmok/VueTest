@@ -40,7 +40,9 @@ var vm = new Vue({
             "ahmed",
 
 
-        ]
+        ],
+        username: '',
+        max: 14,
     },
     methods: {
         lionInfo: function () {
@@ -61,7 +63,29 @@ var vm = new Vue({
             return this.benificaries.filter(function (el) {
                 return el.match(filtering);
             })
-        }
+        },
+        validatusername: function () {
+            var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%_^&*]{6,16}$/;
+
+            if (!this.username) {
+                return 'لايمكن ترك الحقل فارغ'
+            } else if (this.username.length < 14) {
+                return 'يجب الا تقل الحروف عن 14 احرف';
+            }
+            // else if (this.username.length > 10) {
+            //     return 'يجب الايزيد عدد الاحرف عن 10حرف';
+            // }
+            else if (!isNaN(this.username)) {
+                return 'لايمكن استخدام ارقام فقط';
+            }
+
+            else if (!regularExpression.test(this.username)) {
+                return 'يجب ان تحتوي علي حروف وكلمات وعلامات';
+            }
+            else {
+                return 'مرحبا' + ' : ' + this.username;
+            }
+        },
     }
 })
 

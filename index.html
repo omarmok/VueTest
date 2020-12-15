@@ -107,7 +107,7 @@
                         <p class="mx-auto text-center"> لاتوجد بيانات</p>
                     </b-card-text>
 
-                    <b-button :href="item.url" variant="primary">More info </b-button>
+                    <b-button :href="item.url" variant="primary" target="_blank">More info </b-button>
                 </b-card>
             </b-col>
 
@@ -188,6 +188,24 @@
 
 
         <!-- end filter -->
+
+        <!-- validation -->
+
+        <b-row>
+            <b-col>
+                <div class="mt-2 mb-5 d-flex flex-column">
+                    <label>
+                        اسم المستخدم
+                    </label>
+                    <input type="text " v-model="username" required :maxlength="max" class="form-control w-25 mb-2">
+                    <span style="color: #f34f41;"> {{ validatusername }}</span>
+                </div>
+            </b-col>
+        </b-row>
+
+        <!-- end validation -->
+
+
 
 
     </b-container>
