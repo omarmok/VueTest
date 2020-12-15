@@ -1,0 +1,244 @@
+﻿@import "common";
+
+body {
+    background: url(../images/login_bg.png) 100% 0% #f1f1f1 no-repeat !important;
+}
+
+.main-web {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+    /*  &:before {
+        content: '';
+        display: block;
+        background: $green;
+        height: 100%;
+        width: 60%;
+        transform: rotate3d(1, 1, 1, 41deg);
+        position: fixed;
+        right: -30%;
+        border-left: 15px solid $brown;
+        z-index: -1;
+    }*/
+}
+
+.logo {
+    text-align: center;
+    padding-top: 20px;
+
+    img {
+        height: 100px;
+    }
+}
+
+.body-login {
+    background: $white;
+    @include b-radius(25px);
+    width: 750px;
+    margin: 40px auto;
+    min-height: 380px;
+}
+
+.page-login {
+    /* padding: 50px;*/
+    font-size: 13px;
+
+    .desc-logo {
+        font-weight: bold;
+        font-size: 18px;
+        color: #C3996B;
+        text-align: right;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        padding: 15px;
+    }
+
+    .main__login {
+        padding: 15px;
+    }
+
+    .data-desc {
+        line-height: 20px;
+        font-size: 12px;
+        margin-bottom: 30px;
+
+        .user__message {
+            display: block;
+            font-size: 14px;
+        }
+    }
+}
+
+.logo-iam {
+    text-align: center;
+
+    img {
+        height: 60px;
+    }
+}
+
+.btn-login {
+    background: $green;
+    @include b-radius(5px);
+    height: 45px;
+    border: 1px solid transparent;
+    margin: 0 auto;
+    margin-top: 60px;
+    display: block;
+    padding: 0 50px;
+
+    &:hover, &:focus, &:active {
+        background-color: $brown !important;
+        box-shadow: 0 0 6px 1px rgba($brown, 40%) !important;
+        border: 1px solid #AF8960 !important;
+    }
+}
+
+// Page Register
+.page-register {
+    padding: 20px;
+
+    .title-page {
+        color: $brown;
+        font-size: $font-size + 9;
+        margin: 0;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #F3F3F3;
+        font-weight: 600;
+
+        svg {
+            fill: $brown;
+            font-size: $font-size + 15;
+            margin-left: 10px;
+        }
+    }
+
+    .table {
+        font-size: $font-size - 1;
+
+        thead tr {
+            background: #F1F1F1;
+            border: 1px solid #F1F1F1;
+        }
+
+        thead tr th {
+            border: 0 !important;
+            font-weight: normal;
+        }
+
+        td, th {
+            border: 1px solid #dee2e6;
+        }
+
+        th:focus {
+            outline: none;
+        }
+
+        tbody tr:hover,
+        tbody tr:nth-of-type(odd) {
+            background-color: transparent;
+        }
+    }
+
+    .btn-next {
+        margin: inherit;
+
+        button {
+            padding: 0 15px;
+        }
+    }
+}
+
+// Form
+
+form {
+    label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        height: 45px;
+        border: 1px solid $gary3;
+        font-size: $font-size - 1;
+    }
+
+    .form-control:disabled, .form-control[readonly] {
+        background-color: #e9ecef42;
+        border: 1px solid #dde1e5;
+    }
+
+    button, .btn, .btn-primary {
+        @extend .btn-login;
+        margin: inherit;
+        margin-top: 15px;
+    }
+
+    .btn-email {
+        .btn {
+        }
+    }
+
+    .invalid-feedback {
+        position: absolute
+    }
+
+    .btn-primary.disabled, .btn-primary:disabled {
+        background-color: $disabled;
+        border: 1px solid $disabled;
+        opacity: 1;
+
+        &:hover {
+            background-color: $disabled !important;
+            border: 1px solid $disabled !important;
+            box-shadow: none !important;
+        }
+    }
+
+    .duration-time {
+        span {
+            display: block;
+            background: #c3996b;
+            text-align: center;
+            height: 45px;
+            line-height: 45px;
+            color: #fff;
+            border-radius: 6px;
+            width: 50%;
+            margin-top: 30px;
+        }
+    }
+
+    hr {
+        border-top: 1px solid #F3F3F3;
+    }
+
+    .btn-valid {
+        .btn {
+            width: 100%;
+        }
+    }
+
+    .valid-block {
+        color: $disabled;
+        font-weight: bold;
+
+        .time-valid {
+            color: $brown;
+        }
+    }
+}
+
+// End Form
+
+// pagination
+.pagination {
+    button {
+        margin: inherit;
+        background-color: $green !important;
+        height: 36px;
+    }
+}
+
+// End pagination

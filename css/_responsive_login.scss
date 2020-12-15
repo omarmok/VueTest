@@ -1,0 +1,124 @@
+﻿@import "common";
+
+@media only screen and (max-width: 1024px) {
+    footer {
+        .footer-right {
+            order: 1;
+            max-width: 45%;
+            flex: inherit;
+        }
+
+        .footer-left {
+            order: 2;
+            max-width: 55%;
+            flex: inherit;
+        }
+
+        .footer-center {
+            order: 3;
+            max-width: 100%;
+            flex: inherit;
+            font-size: $font-size - 2;
+            margin-top: 10px;
+        }
+
+        .menu-footer ul li {
+            padding: 0 5px;
+
+            a {
+                font-size: $font-size - 2;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .body-login {
+        width: 650px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    $font-size: 13px;
+
+    body {
+        font-size: $font-size;
+    }
+    .main-web:before {
+        right: -44%;
+        top: -20%;
+    }
+    .body-login {
+        width: 100%;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    .page-login {
+        padding: 20px;
+    }
+
+    .logo-iam img {
+        height: 40px;
+    }
+
+
+    footer {
+        .footer-right {
+            order: 2;
+            max-width: 100%;
+            margin-top: 10px;
+        }
+
+        .footer-left {
+            order: 1;
+            max-width: 100%;
+            flex: inherit;
+        }
+
+        .footer-center {
+            order: 3;
+            font-size: $font-size - 3;
+            margin-top: 10px;
+        }
+
+        .menu-footer ul li {
+            padding: 0 5px;
+
+            a {
+                font-size: $font-size - 3;
+                color: #000000;
+            }
+        }
+    }
+
+    form {
+        .col {
+            flex: inherit
+        }
+
+        button, .btn, .btn-primary {
+            margin-top: inherit
+        }
+
+        #phone2-input-div {
+            margin-top: 15px;
+        }
+    }
+
+    .page-register {
+        .title-page {
+            font-size: $font-size + 5;
+        }
+
+        svg {
+            font-size: $font-size + 12;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 320px) {
+}

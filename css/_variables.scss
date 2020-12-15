@@ -1,0 +1,35 @@
+﻿$dir-rtl: rtl;
+$text-right: right;
+
+$bg: #f5f5f5;
+$green: #05714b;
+$brown: #c3996b;
+$black: #464e5f;
+$white: #ffffff;
+$gary: #cbcbcb;
+$gary2: #a7a8a9;
+$gary3: #cccccc;
+$disabled: #cfd0d0;
+
+$font-size: 12px;
+
+// functions --------
+@mixin b-radius($val) {
+    -webkit-border-radius: $val !important;
+    -moz-border-radius: $val !important;
+    border-radius: $val !important;
+}
+
+@mixin transi($property, $time) {
+    -webkit-transition: $property $time !important;
+    -moz-transition: $property $time !important;
+    -ms-transition: $property $time !important;
+    -o-transition: $property $time !important;
+    transition: $property $time !important;
+}
+
+@mixin line-hight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

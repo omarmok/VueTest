@@ -14,21 +14,79 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.18.1/bootstrap-vue-icons.min.css"
         integrity="sha512-i0tPmtwhNYyKmqYiccSN9qsEX25FsNNkeWqIbjYyk7QoVkPLfyl7QsABy3oIQx5ofROjV6KLJTzV+asMrT25UA=="
         crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <link href="css/animated.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
 
 </head>
 
-<body>
+<body class="inner__layout__body">
 
-    <b-container id="app">
+
+    <header class="p-2  bg-white">
+        <div class="container">
+            <div class="row     align-items-center">
+                <div class="col">
+                    <div class="logo p-0 text-right ">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
+                            <img src="./image/logo.svg" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="left__area">
+
+                        <div class="header-user-block">
+                            <div class="user-img-cont">
+                                <a href="" class="top__notification" title="الاشعارات">
+                                    <img src="./image/notification.svg" />
+                                    <span></span>
+                                </a>
+                            </div>
+
+
+                            <div class="gear" title="الاعدادات"></div>
+
+                            <div class="user__seetings ">
+
+                                <a class=" " href="/Individual/ProfileIndex">
+                                    <i class="fas fa-user"></i>
+                                    <span class="hidden-xs">احمد محمد علي </span>
+                                </a>
+
+                                <a class=" " href="/account/Manage">
+                                    <i class="fas fa-cog"></i>
+                                    <span class="">ادارة الحساب </span>
+                                </a>
+
+                                <a href="/Account/Logout" id="logout-btn" class=" ">
+                                    <i class="fas fa-sign-out-alt"></i>خروج
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <b-container id="app" class="mt-4">
 
         <b-row>
             <b-col>
 
-                <b-alert show dismissible fade class="mt-3">
+                <b-alert show dismissible fade class="mt-3 animated fadeInDown">
                     Dismissible Alert! Click the close button over there <b>&rArr;</b>
                 </b-alert>
 
@@ -73,7 +131,7 @@
 
         <b-row class="mb-3">
             <b-col cols="12" class="mt-3">
-                <b-button @click="addcategory()" variant="success">اضافة</b-button>
+                <b-button @click="addcategory()" variant="success" class="float-left">اضافة</b-button>
             </b-col>
 
             <b-col cols="12" class="mt-3 " v-for="item in items">
@@ -151,6 +209,12 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+        $(".gear").click(function () {
+            $(".user__seetings").toggleClass('d-flex animated slideInUp');
+        });
+    </script>
 
 </body>
 
