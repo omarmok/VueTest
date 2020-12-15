@@ -32,11 +32,12 @@ var vm = new Vue({
         url: "https://en.wikipedia.org/wiki/Lion",
 
         benificarySearch: "",
-        benificary: [
 
-            'Omar',
-            'zakaria',
-            'qwertyuiop;khfdsazzccvbbnnm',
+        benificaries: [
+            "omar",
+            "ahmed",
+
+
         ]
     },
     methods: {
@@ -55,9 +56,8 @@ var vm = new Vue({
     computed: {
         filterbenificary: function () {
             var filtering = new RegExp(this.benificarySearch, 'i');
-            return this.benificary.filter(function (el) {
-
-                return el.match(filtering)
+            return this.benificaries.filter(function (el) {
+                return el.match(filtering);
             })
         }
     }
