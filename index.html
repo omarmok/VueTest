@@ -172,10 +172,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="benificery in filterbenificary">
+                        <!-- to filter -->
+                        <!-- <tr v-for="benificery in filterbenificary"> -->
+                        <tr v-for="benificery in benificaries">
 
                             <td>
-                                {{ benificery }}
+                                {{ benificery.nationalId }}
+                            </td>
+                            <td>
+                                {{ benificery.name }}
+                            </td>
+                            <td>
+                                {{ benificery.city }}
+                            </td>
+                            <td>
+                                {{ benificery.orderKind }}
+                            </td>
+                            <td>
+                                {{ benificery.date }}
+                            </td>
+                            <td>
+                                {{ benificery.stutus }}
                             </td>
 
                         </tr>

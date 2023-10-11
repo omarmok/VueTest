@@ -36,8 +36,15 @@ var vm = new Vue({
         benificarySearch: "",
 
         benificaries: [
-            "omar",
-            "ahmed",
+           {
+            nationalId:'1',
+            name:'red',
+            city:'eg',
+            orderKind:'090',
+            date:'20/11/2027',
+            stutus:'مكتمل'
+
+           }
 
 
         ],
